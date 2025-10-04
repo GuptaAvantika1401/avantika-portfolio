@@ -1,0 +1,17 @@
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <label>Name</label>
+  <input formControlName="name" />
+
+  <label>Email</label>
+  <input formControlName="email" />
+
+  <label>Gender</label>
+  <select formControlName="gender">
+    <option value="">Select</option>
+    <option value="Male">Male</option>
+    <option value="Female">Female</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>

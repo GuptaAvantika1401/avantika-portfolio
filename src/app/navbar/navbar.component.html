@@ -1,0 +1,86 @@
+<nav
+  class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
+  [ngClass]="scrolled ? 'bg-white shadow-lg' : 'bg-transparent'"
+>
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    
+    <!-- Logo -->
+    <a 
+      href="#home" 
+      class="text-3xl font-extrabold relative group animate-logo bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent"
+    >
+      AG
+      <!-- Glow Effect -->
+      <span 
+        class="absolute -inset-1 rounded-lg opacity-0 group-hover:opacity-100 blur-lg bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 transition duration-700">
+      </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <ul class="hidden md:flex space-x-8 font-medium">
+      <li *ngFor="let link of ['home','about','skills','experience','certifications','contact']">
+        <a
+          [href]="'#' + link"
+          class="relative transition duration-300 capitalize
+                 after:content-[''] after:absolute after:left-0 after:-bottom-1
+                 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-pink-500 after:to-blue-500
+                 after:transition-all after:duration-500 hover:after:w-full"
+          [ngClass]="activeSection === link ? 'text-indigo-600 font-semibold' : 'text-gray-700'"
+        >
+          {{ link }}
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <button
+      class="md:hidden focus:outline-none text-gray-700"
+      (click)="toggleMenu()"
+    >
+      <svg
+        *ngIf="!menuOpen"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg
+        *ngIf="menuOpen"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    *ngIf="menuOpen"
+    class="md:hidden bg-white shadow-md absolute top-16 left-0 w-full animate-slide-down"
+  >
+    <ul class="flex flex-col items-center space-y-4 py-6 font-medium">
+      <li *ngFor="let link of ['home','about','skills','experience','certifications','contact']">
+        <a
+          [href]="'#' + link"
+          class="relative transition duration-300 capitalize
+                 after:content-[''] after:absolute after:left-0 after:-bottom-1
+                 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-pink-500 after:to-blue-500
+                 after:transition-all after:duration-500 hover:after:w-full"
+          [ngClass]="activeSection === link ? 'text-indigo-600 font-semibold' : 'text-gray-700'"
+          (click)="closeMenu()"
+        >
+          {{ link }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

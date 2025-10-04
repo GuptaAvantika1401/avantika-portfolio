@@ -1,1 +1,9 @@
-<p>certifications works!</p>
+<section class="achievements-container" [@listAnimation]>
+  <h2 class="title">Achievements</h2>
+
+  <ul>
+    <li *ngFor="let achievement of achievements">
+      {{ achievement }}
+    </li>
+  </ul>
+</section>

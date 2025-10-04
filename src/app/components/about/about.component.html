@@ -1,1 +1,67 @@
-<p>about works!</p>
+<section id="about" 
+  class="about-section relative py-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 opacity-0 transform translate-y-10 transition-all duration-700">
+
+  <!-- Image Card -->
+  <div class="md:w-1/2 flex justify-center relative">
+    <div class="relative bg-white/30 backdrop-blur-lg rounded-3xl shadow-2xl p-6 border border-white/20
+                transform hover:scale-105 transition duration-500 animate-float">
+
+      <!-- Illustration -->
+      <img src="assets/About.png" alt="About Illustration" 
+           class="w-72 md:w-[28rem] rounded-2xl drop-shadow-xl">
+
+      <!-- Orbit Container -->
+      <div class="absolute inset-0 flex justify-center items-center">
+        <div class="orbit orbit-1">
+          <i class="devicon-angularjs-plain colored orbit-icon text-5xl"></i>
+        </div>
+        <div class="orbit orbit-2">
+          <i class="devicon-html5-plain colored orbit-icon text-4xl"></i>
+        </div>
+        <div class="orbit orbit-3">
+          <i class="devicon-css3-plain colored orbit-icon text-4xl"></i>
+        </div>
+        <div class="orbit orbit-4">
+          <i class="devicon-javascript-plain colored orbit-icon text-5xl"></i>
+        </div>
+        <div class="orbit orbit-5">
+          <i class="devicon-dot-net-plain-wordmark colored orbit-icon text-6xl"></i>
+        </div>
+        <div class="orbit orbit-6">
+          <i class="devicon-microsoftsqlserver-plain colored orbit-icon text-5xl"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text Content -->
+  <div class="md:w-1/2 space-y-6">
+    <h2 class="text-4xl font-extrabold text-gray-900">
+      About <span class="text-indigo-600">Me</span>
+    </h2>
+
+    <p class="typewriter-multiline text-base md:text-lg text-gray-700 leading-relaxed">
+      {{ typedText }}
+    </p>
+
+    <!-- Highlights -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 text-gray-800">
+      <div class="highlight-card flex items-start gap-3 bg-white/60 backdrop-blur-md p-4 rounded-xl shadow-md transition">
+        <i class="fas fa-code text-purple-600 text-xl"></i>
+        <span>3+ years in Full Stack Development using .NET & Angular</span>
+      </div>
+      <div class="highlight-card flex items-start gap-3 bg-white/60 backdrop-blur-md p-4 rounded-xl shadow-md transition">
+        <i class="fas fa-database text-purple-600 text-xl"></i>
+        <span>Expert in Web APIs, SQL Server, EF Core & LINQ</span>
+      </div>
+      <div class="highlight-card flex items-start gap-3 bg-white/60 backdrop-blur-md p-4 rounded-xl shadow-md transition">
+        <i class="fas fa-laptop-code text-purple-600 text-xl"></i>
+        <span>Frontend expertise: HTML, CSS, JS, Angular</span>
+      </div>
+      <div class="highlight-card flex items-start gap-3 bg-white/60 backdrop-blur-md p-4 rounded-xl shadow-md transition">
+        <i class="fas fa-users text-purple-600 text-xl"></i>
+        <span>Collaborative team player with great communication skills</span>
+      </div>
+    </div>
+  </div>
+</section>

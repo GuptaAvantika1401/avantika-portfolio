@@ -1,0 +1,78 @@
+/* Float animation for illustration */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Typewriter fade */
+.typewriter-multiline {
+  display: inline-block;
+  white-space: pre-wrap;
+  overflow: hidden;
+  animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Orbit animations */
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+.orbit-icon {
+  font-size: 2.4rem;   /* smaller than your current ~2.8-3rem */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+  cursor: pointer;
+}
+.orbit-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 6px 12px rgba(99,102,241,0.6));
+}
+/* Orbit keyframes (desktop default radius) */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(140px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+}
+
+/* Orbit speeds */
+.orbit-1 { animation: orbit 12s linear infinite; }
+.orbit-2 { animation: orbit 15s linear infinite reverse; }
+.orbit-3 { animation: orbit 18s linear infinite; }
+.orbit-4 { animation: orbit 20s linear infinite reverse; }
+.orbit-5 { animation: orbit 22s linear infinite; }
+.orbit-6 { animation: orbit 25s linear infinite reverse; }
+
+/* RESPONSIVE Orbit Sizes */
+@media (max-width: 1024px) {
+  @keyframes orbit {
+    from { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+  }
+  .orbit-icon { font-size: 2rem !important; }
+}
+@media (max-width: 640px) {
+  @keyframes orbit {
+    from { transform: rotate(0deg) translateX(70px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(70px) rotate(-360deg); }
+  }
+  .orbit-icon { font-size: 1.5rem !important; }
+}
+
+/* Scroll reveal */
+.about-section {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.about-section.in-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: all 1s ease;
+}

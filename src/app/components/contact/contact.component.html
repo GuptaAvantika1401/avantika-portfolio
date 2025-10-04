@@ -1,1 +1,41 @@
-<p>contact works!</p>
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-card">
+      <h2>🚀 Get In Touch</h2>
+      <p>
+        I'd love to hear from you! Let's create something amazing together.
+      </p>
+
+      <form (ngSubmit)="sendEmail(contactForm)" #contactForm="ngForm">
+        <input
+          type="text"
+          name="from_name"
+          ngModel
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          name="from_email"
+          ngModel
+          placeholder="Your Email"
+          required
+        />
+        <input
+          type="text"
+          name="title"
+          ngModel
+          placeholder="Subject"
+          required
+        />
+        <textarea
+          name="message"
+          ngModel
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
